@@ -23,6 +23,55 @@
         }
     }
 
+    const aboutRef = ref(null)
+    const beginRef = ref(null)
+    const portRef = ref(null)
+    const skillRef = ref(null)
+    const servRef = ref(null)
+    const footerRef = ref(null)
+
+    const scrollToAbout = () => {
+        if (aboutRef.value && aboutRef.value.$el) {
+            const yOffset = aboutRef.value.$el.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: yOffset, behavior: 'smooth' });
+        }
+    }
+
+    const scrollToBegin = () => {
+        if (beginRef.value && beginRef.value.$el) {
+            const yOffset = beginRef.value.$el.getBoundingClientRect().top + window.pageYOffset
+            window.scrollTo({ top: yOffset, behavior: 'smooth'})
+        }
+    }
+
+    const scrollToPort = () => {
+        if (portRef.value && portRef.value.$el) {
+            const yOffset = portRef.value.$el.getBoundingClientRect().top + window.pageYOffset
+            window.scrollTo({ top: yOffset, behavior: 'smooth'})
+        }
+    }
+
+    const scrollToSkill = () => {
+        if (skillRef.value && skillRef.value.$el) {
+            const yOffset = skillRef.value.$el.getBoundingClientRect().top + window.pageYOffset
+            window.scrollTo({ top: yOffset, behavior: 'smooth'})
+        }
+    }
+
+    const scrollToService = () => {
+        if (servRef.value && servRef.value.$el) {
+            const yOffset = servRef.value.$el.getBoundingClientRect().top + window.pageYOffset
+            window.scrollTo({ top: yOffset, behavior: 'smooth'})
+        }
+    }
+
+    const scrollToCont = () => {
+        if (footerRef.value && footerRef.value.$el) {
+            const yOffset = footerRef.value.$el.getBoundingClientRect().top + window.pageYOffset
+            window.scrollTo({ top: yOffset, behavior: 'smooth'})
+        }
+    }
+
     onMounted(() => {
         document.addEventListener('click', handleClickOutside)
     })
@@ -35,15 +84,20 @@
 
 <template>
     <div class="flex flex-col h-full" ref="appRoot">
-        <Header />
-        <SideMenu />
+        <Header 
+            @aboutButton="scrollToAbout" @beginButton="scrollToBegin" @portButton="scrollToPort"
+            @skillButton="scrollToSkill" @serviceButton="scrollToService" @contButton="scrollToCont"/>
+        <SideMenu 
+            @aboutButton="scrollToAbout" @beginButton="scrollToBegin" @portButton="scrollToPort"
+            @skillButton="scrollToSkill" @serviceButton="scrollToService" @contButton="scrollToCont"
+        />
         <div class="flex-1 h-auto overflow-y-hidden overflow-x-scroll">
-            <Main />
-            <About />
-            <PortFoil />
-            <Skills />
-            <Services />
+            <Main ref="beginRef" @click-button="scrollToAbout"/>
+            <About ref="aboutRef" />
+            <PortFoil ref="portRef"/>
+            <Skills ref="skillRef"/>
+            <Services ref="servRef"/>
         </div>
-        <Footer />
+        <Footer ref="footerRef"/>
     </div>
 </template>

@@ -17,23 +17,25 @@
 </script>
 
 <template>
-    <div class="bg-slate-700 h-1/2 flex flex-col justify-center items-center rounded-md shadow-md overflow-hidden">
-        <img :src="img" alt="" class="object-cover">
+    <div class="bg-slate-700 sm:w-1/3 flex flex-col justify-center items-center rounded-md shadow-md overflow-hidden">
+        <div class="pt-4 rounded-md">
+            <slot name="photo"></slot>
+        </div>
         <div class="flex flex-col p-4">
-            <span class="text-xl font-bold tracking-tighter">{{ title }}</span>
+            <span class="text-xl font-bold tracking-tighter text-center">{{ title }}</span>
             <span class="text-sm font-thin tracking-wide">{{ content }}</span>
-            <div v-if="hasLogin">
-                <div class="flex flex-row text-sm gap-2">
+            <div v-if="hasLogin" class="flex flex-col 2xl:flex-row justify-around">
+                <div class="flex flex-row text-sm">
                     <span>Email: </span>
                     <span>{{ email }}</span>
                 </div>
-                <div class="flex flex-row text-sm gap-2">
+                <div class="flex flex-row text-sm">
                     <span>Senha: </span>
                     <span>{{ email }}</span>
                 </div>
             </div>
         </div>
-        <footer class="w-full bg-slate-600 flex justify-center">
+        <footer class="w-full sm:mt-8 bg-slate-600 flex justify-center hover:bg-slate-800 cursor-pointer duration-100">
             <button class="m-2 flex flex-row justify-center items-center gap-2 text-lg font-semibold tracking-tighter">
                 <i class="fas fa-rocket"></i>
                 <span>Saiba Mais</span>
