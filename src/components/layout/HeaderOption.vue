@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <div class="sm:text-md 2xl:text-xl sm:pr-20 2xl:pr-32">
+    <div class="sm:text-md 2xl:text-xl sm:pr-20 2xl:pr-32 font-extrabold tracking-tight">
         <span class="hover:cursor-pointer hover:text-slate-400 duration-200" @click="emitEvent">
             {{ title }}
         </span>

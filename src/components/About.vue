@@ -16,7 +16,7 @@
         <span class="p-4 text-center text-slate-300">
             {{ about }}
         </span>
-        <div class="mt-12">
+        <!-- <div class="mt-12">
             <span class="text-5xl font-bold tracking-tighter">Social</span>
             <div class="flex w-full justify-between mt-10 text-3xl font-extrabold">
                     <div>
@@ -35,6 +35,6 @@
                         </a>
                     </div>
                 </div>
-        </div>
+        </div> -->
     </div>
 </template>
