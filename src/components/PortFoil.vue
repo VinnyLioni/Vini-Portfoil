@@ -13,6 +13,8 @@
     const gataticosadm = 'Essa é uma aplicação desenvolvida com Ionic e Vue3 para gerenciar o meu PDV. Através dela, consigo controlar as liberações de usuário, parametros de uso e até mesmo o painel financeiro com base nos clientes que utilizam o meu PDV. Clique em Saiba Mais para conhecer a respeito!'
     const gataticosAdmImg = 'src/assets/gataticosadm.png'
 
+    const codereader = 'Essa é uma aplicação que demonstra como funcionaria a leitura de códigos de barras através da câmera do seu smartphone, demonstrando também qual é o tipo do código de barra lido. Ferramenta muito útil e poderosa, podendo eliminar a depência de um leitor físico.'
+
     const redirectToApp = (payload) => {
         // window.location.href = payload
         window.open(payload, '_blank')
@@ -43,6 +45,13 @@
             >
                 <template #photo>
                     <img src="../assets/gataticosadm.png" alt="" class="sm:h-64">
+                </template>
+            </portfoilCard>
+            <portfoilCard title="Code-Reader" :content="codereader"
+                @emitEvent="redirectToApp('https://vini-codereader.web.app/')"
+            >
+                <template #photo>
+                    <img src="../assets/gataticos-codereader.png" alt="" class="sm:h-64">
                 </template>
             </portfoilCard>
         </div>
