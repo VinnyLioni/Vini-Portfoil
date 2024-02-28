@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <div class="h-full w-full flex flex-col justify-center items-center p-10 2xl:pt-32 pt-36" :ref=ref>
+    <div class="h-full w-full flex flex-col justify-center items-center p-10 2xl:pt-32 pt-20" :ref=ref>
         <span class="text-5xl text-center tracking-tight font-extrabold">Serviços</span>
         <span class="text-slate-300 p-4">Confira os serviços disponíveis.</span>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 m-2">

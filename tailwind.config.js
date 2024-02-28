@@ -5,6 +5,9 @@ export default {
     extend: {
       colors: {
         "vini-blue": "#1c2436",
+        "vini-sky-blue": "#4091F9",
+        "vini-sea-green": "#F4F9FF",
+        "vini-sand": "#F1F1E6",
       },
     },
   },

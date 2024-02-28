@@ -17,7 +17,15 @@
     const appRoot = ref(null)
 
     const handleClickOutside = (e) => {
-        if (appRoot.value && !appRoot.value.contains(e.target) && appStore.isExpanded === true) {
+        // if (appRoot.value && !appRoot.value.contains(e.target) && appStore.isExpanded === true) {
+        //     appStore.toggleMenu(false)
+        //     console.log('fora')
+        // }
+
+        const navBarElement = document.querySelector('aside')
+        const buttonElement = document.querySelector('button')
+
+        if (navBarElement && !navBarElement.contains(e.target) && !buttonElement.contains(e.target)) {
             appStore.toggleMenu(false)
             console.log('fora')
         }
